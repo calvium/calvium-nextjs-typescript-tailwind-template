@@ -1,0 +1,29 @@
+name: Web App Deployment
+
+on: push
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout the repo
+      - name: 'Checkout Github Action'
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: 'npm install, build, and test'
+        working-directory: web
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
+
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: my-azure-web-app-name # TODO needs to match name in the Azure Portal
+          # Add this secret via the Github Repo Settings > Secrets UI
+          publish-profile: ${{ secrets.azureWebAppPublishProfile }}

@@ -1,0 +1,38 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* default global styles */
+@layer base {
+    html {
+        font-size: 12px;
+        font-family: RRPioneer, sans-serif;
+    }
+
+    body {
+        /* disable bounce at start and end of doc - doesn't work well with position: fixed headers */
+        overscroll-behavior-y: none;
+        overscroll-behavior-x: none;
+    }
+
+    h1 {
+        @apply text-gray-700 text-3xl;
+    }
+
+    h2 {
+        @apply text-gray-700 text-2xl;
+    }
+
+    h3 {
+        @apply text-gray-700 text-xl;
+    }
+
+    /* larger font on larger screens */
+    @media (min-width: 1024px) {
+        html {
+            font-size: 16px;
+        }
+    }
+}
+
