@@ -6,8 +6,7 @@
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "check-eslint": "./node_modules/.bin/eslint \"src/**/**.?(ts|tsx)\" --fix --max-warnings=0",
-    "check": "npm run check-prettier --silent && npm run check-eslint --silent && npm run check-tsc --silent && npm run test --silent"
+    "check-eslint": "eslint \"src/**/**.?(ts|tsx)\" --fix --max-warnings=0"
   },
   "dependencies": {
     "next": "10.0.5",
