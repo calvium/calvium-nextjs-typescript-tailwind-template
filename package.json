@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev -p ${PORT:-3000}",
     "build": "next build",
     "start": "next start",
     "check-eslint": "eslint \"src/**/**.?(ts|tsx)\" --fix --max-warnings=0"
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@calvium/prettier-config": "1.0.1",
     "@types/node": "^14.14.9",
-    "@types/react": "^16.14.0",
+    "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
     "autoprefixer": "^10.0.2",
