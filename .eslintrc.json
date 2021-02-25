@@ -1,0 +1,8 @@
+{
+  // https://www.npmjs.com/package/eslint-config-react-app
+  "extends": "react-app",
+  "rules": {
+    // NextJS uses <Link><a>... with no href on <a> so need to disable this rule
+    "jsx-a11y/anchor-is-valid": 0
+  }
+}
